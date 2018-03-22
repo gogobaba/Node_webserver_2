@@ -23,9 +23,10 @@ app.use((req,res,next)=>{
   next();
 });
 
-app.use((req,res,next)=>{
-     res.render('maintainence.hbs');
-});
+// app.use((req,res,next)=>{
+//      res.render('maintainence.hbs');
+//      
+// });
 
 app.use(express.static(__dirname + '/public'));
 
@@ -51,6 +52,12 @@ app.get('/about',(req,res)=>{
   res.render('about.hbs',{
     pageTitle:'About Page',
     currentYear: new Date().getFullYear()
+  });
+});
+
+app.get('/projects',(req,res)=>{
+  res.render('projects.hbs',{
+    pageTitle:'Projects page'
   });
 });
 
